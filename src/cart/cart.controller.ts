@@ -19,7 +19,7 @@ export class CartController {
   @Get()
   async findUserCart(@Req() req: AppRequest) {
     const cart = await this.cartService.findOrCreateByUserId(getUserIdFromRequest(req));
-    console.log(JSON.stringify(cart), 'response');
+    console.log(cart, 'response');
 
     return {
       statusCode: HttpStatus.OK,
